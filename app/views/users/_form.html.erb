@@ -1,0 +1,92 @@
+<%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :userID, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.text_field :userID, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :latitude, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.text_field :latitude, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :longitude, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.text_field :longitude, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :smoker, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.label :smoker, :class => "radio-inline" do %><%= f.radio_button :smoker, 'true', :checked => true %>True<% end %>
+        <%= f.label :smoker, :class => "radio-inline" do %><%= f.radio_button :smoker, 'false' %>False<% end %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :transport, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.text_field :transport, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :marital_status, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.label :marital_status, :class => "radio-inline" do %><%= f.radio_button :marital_status, 'single', :checked => true %>Single<% end %>
+        <%= f.label :marital_status, :class => "radio-inline" do %><%= f.radio_button :marital_status, 'married' %>Married<% end %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :birth_year, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.number_field :birth_year, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :color, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.label :collor, :class => "radio-inline" do %><%= f.radio_button :color, 'white', :checked => true %>White<% end %>
+        <%= f.label :collor, :class => "radio-inline" do %><%= f.radio_button :color, 'black' %>Black<% end %>
+        <%= f.label :collor, :class => "radio-inline" do %><%= f.radio_button :color, 'yellow' %>Yellow<% end %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :weight, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.number_field :weight, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :budget, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.label :budget, :class => "radio-inline" do %><%= f.radio_button :budget, 'high', :checked => true %>High<% end %>
+        <%= f.label :budget, :class => "radio-inline" do %><%= f.radio_button :budget, 'medium' %>Medium<% end %>
+        <%= f.label :budget, :class => "radio-inline" do %><%= f.radio_button :budget, 'low' %>Low<% end %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :height, :class => "col-sm-2 control-label" %>
+      <div class="col-sm-3">
+        <%= f.text_field :height, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-3">
+        <%= f.submit "Submit", :class => 'btn btn-primary' %>
+        <%= link_to 'Back', users_path, :class => "btn btn-warning" %>
+      </div>
+    </div>
+<% end %>

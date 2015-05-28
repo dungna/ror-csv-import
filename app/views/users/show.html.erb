@@ -1,0 +1,60 @@
+<table class="form-horizontal">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Userid:</strong>
+    <%= @user.userID %>
+  </p>
+
+  <p>
+    <strong>Latitude:</strong>
+    <%= @user.latitude %>
+  </p>
+
+  <p>
+    <strong>Longitude:</strong>
+    <%= @user.longitude %>
+  </p>
+
+  <p>
+    <strong>Smoker:</strong>
+    <%= @user.smoker %>
+  </p>
+
+  <p>
+    <strong>Transport:</strong>
+    <%= @user.transport %>
+  </p>
+
+  <p>
+    <strong>Marital status:</strong>
+    <%= @user.marital_status %>
+  </p>
+
+  <p>
+    <strong>Birth year:</strong>
+    <%= @user.birth_year %>
+  </p>
+
+  <p>
+    <strong>Color:</strong>
+    <%= @user.color %>
+  </p>
+
+  <p>
+    <strong>Weight:</strong>
+    <%= @user.weight %>
+  </p>
+
+  <p>
+    <strong>Budget:</strong>
+    <%= @user.budget %>
+  </p>
+
+  <p>
+    <strong>Height:</strong>
+    <%= @user.height %>
+  </p>
+</table>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
